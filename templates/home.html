@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+</head>
+	<body>
+	<center>
+		<h1 dir="rtl" align="center">ברוכים הבאים למחשבון ה-BMI של אורן!</h1>
+		<form dir="rtl" action = "/result" method = "POST">
+			<p>הכנס את הגובה שלך בסנטימטרים:</p>
+			<input type="text" name="height">
+
+			<p>הכנס את המשקל שלך בק"ג:</p>
+            <input type="text" name="weight">
+            <br>
+            <input type="submit" value="חישוב">
+		</form>
+	</center>
+	</body>
+</html>
