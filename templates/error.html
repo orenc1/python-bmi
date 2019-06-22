@@ -6,7 +6,27 @@
     <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
 </head>
 <body><center>
-    <p dir="rtl">אחד או יותר מהערכים שהוזנו אינו תקין</p>    
+    <div id="IllegalHeightValue" style="visibility:hidden;">
+        <p dir="rtl">הגובה שהוזן אינו תקין.</p>
+    </div>
+    <div id="IllegalWeightValue" style="visibility:hidden;">
+        <p dir="rtl">המשקל שהוזן אינו תקין.</p>
+    </div>
 	<a href="/">חזרה לעמוד הראשי</a>
 </center></body>
 </html>
+
+<script>
+    var heightTag = document.getElementById('IllegalHeightValue');
+    var weightTag = document.getElementById('IllegalWeightValue');
+
+    errors_list = {{ errors|safe }};
+    if (errors_list.includes('height')) {
+        heightTag.style.visibility = 'visible';
+    }
+
+        if (errors_list.includes('weight')) {
+        weightTag.style.visibility = 'visible';
+    }
+
+</script>
